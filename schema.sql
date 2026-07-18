@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS api_monitor;
 USE api_monitor;
 
--- Create Users Table
+--  Users Table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create APIs Table
+--  APIs Table
 CREATE TABLE IF NOT EXISTS apis (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS apis (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- Create Monitoring History Table
+--  Monitoring History Table
 CREATE TABLE IF NOT EXISTS monitoring_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     api_id INT NOT NULL,
